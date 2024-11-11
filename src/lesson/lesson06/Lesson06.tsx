@@ -103,7 +103,6 @@ export default function Lesson06() {
 
   console.log(heroes)
 
-
   return (
     <div>
       <h2>Lesson 06 </h2>
