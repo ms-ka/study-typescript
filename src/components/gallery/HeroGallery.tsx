@@ -1,32 +1,28 @@
+import React from "react";
 import HeroCard from "./HeroCard";
-
-interface IHero{
-  id: string;
-  name: string;
-  image: string;
-  weapons: string[];
-}
+import IHero from "../../lesson/lesson05/data";
 
 //Interfejs IHero - Definiuje strukturę dla każdego bohatera.
-interface IHeroGalleryProps {
-  heroes: IHero[];
+interface HeroGalleryProps {
+  data: IHero[]
 }
 
-//Interfejs IHeroGalleryProps - Przechowuje tablicę heroes, które zostaną przekazane do HeroGallery
-function HeroGallery({ heroes }: IHeroGalleryProps) {
+//data to props
+export default function HeroGallery({ data }: HeroGalleryProps) {
   return (
-    <div className="grid-container">
-      {/* mapowanie - Teraz HeroGallery iteruje po heroes, a każdy element jest przekazywany jako pojedynczy HeroCard. */}
-      {heroes.map((hero) => (
+    <section className="grid-container">
+      {/* mapowanie - Teraz HeroGallery iteruje po heroes, a każdy element jest przekazywany jako pojedynczy HeroCard. */} 
+      {data.map((hero) => (
         <HeroCard
           key={hero.id}
+          isDark={hero.isDark}
           name={hero.name}
           image={hero.image}
+          age={hero.age}
           weapons={hero.weapons}
         />
       ))}
-    </div>
-  );
+    </section>
+  )
 }
 
-export default HeroGallery;

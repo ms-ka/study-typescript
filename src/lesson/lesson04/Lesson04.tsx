@@ -3,7 +3,7 @@ import { useState } from "react";
 import MyButton from "../../components/myButton/MyButton";
 import "./lesson04.css";
 
-function Lesson04() {
+function Lesson04(): JSX.Element {
   // * изменение обычных переменных в React не приведет к обновлению компонента 🫤
 
   // let count = 0;
@@ -33,13 +33,13 @@ function Lesson04() {
   const [count, setCount] = useState(0);
 
   // * пример со строкой
-  const [name, setName] = useState("John");
+  const [name, setName] = useState<string>("John");
 
   // * пример с булевым значением
   // const [toggle, setToggle] = useState(true)
 
   // * пример с массивом
-  const [items, setItems] = useState([1, 2, 3]);
+  const [items, setItems] = useState<number[]>([1, 2, 3]);
 
   const handleMinus = () => {
     setCount(prev => prev - 1);
@@ -52,7 +52,7 @@ function Lesson04() {
   // * обработчики для практики useState()
 
   // изменение строки
-  const handleUpperCase = () => {
+  const handleUpperCase = ():void => {
     setName(prev => prev.toUpperCase());
   };
 
@@ -61,7 +61,7 @@ function Lesson04() {
   // поэтому мы передаем в функцию сеттер новое значение
   // в случаем с массивом мы используем spread оператор для копии текущего значения массива
 
-  const handleChangeArray = () => {
+  const handleChangeArray = ():void => {
     // удалили элемент по индексу
     setItems(items.filter((_,index) => index !== 0))
     // дописали элемент в начало
@@ -74,13 +74,7 @@ function Lesson04() {
     <div className="lesson-container">
       <h2>Lesson 04</h2>
       <p>React hook useState()🪝</p>
-      <div className="counter">
-        <MyButton func={handleMinus} text={"-"} />
-        {/* <button onClick={handleMinus}>-</button> */}
-        <span>{count}</span>
-        <MyButton func={handlePlus} text={"+"} isDanger={false} />
-        {/* <button onClick={handlePlus}>+</button> */}
-      </div>
+     
       <p>
         Чтобы хранить и отображать на странице изменяющиеся данные в React мы используем 'состояние'
         (state) - это особая переменная в React, которая приходит в результате выполнения функции

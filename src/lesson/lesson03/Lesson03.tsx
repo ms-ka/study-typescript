@@ -1,7 +1,7 @@
 import MyButton from "../../components/myButton/MyButton";
 //importuję komponent guzik i uzywam go z różnymi propsami
 
-function Lesson03(){
+function Lesson03(): JSX.Element {
     // definiuję funkje obsługujące akcje przycisku
     // Funkcje logują odpowiednie komunikaty do konsoli po wywołaniu/ kliknięciu guziku.
     const handleClick = () => {

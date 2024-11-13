@@ -1,22 +1,27 @@
 import react from '../../assets/react.jpg';
 import MyButton from '../../components/myButton/MyButton';
 import './lesson02.css'
-function Lesson02() {
+function Lesson02(): JSX.Element {
     // Tworzenie zmiennych czyli const с версткой и положить в нее тег li
     const element = <li>Element in variable</li>;
     // или мы можем создать переменную со строкой для тега в верстке
     const text = "Text for JSX tag";
     const company = "Facebook"
 
+    interface IUser{
+      firstName: string
+      lastName: string
+    }
+
     // Tworzenie Obiektu z danymi użytkownika
-    const user = {
+    const user:IUser = {
         firstName: 'Brendan',
         lastName: 'Eich'
     }
     // Funkcja służąca do zmiany danych w objekcie
-    function formatUser(name) {
-        return name.firstName + ' ' + name.lastName
-    }
+    function formatUser(user: IUser) {
+      return user.firstName + ' ' + user.lastName;
+  }
     // zmienna, od której znaczenia zalezy wyświetlenie dancyh
     // jeśli jest zalogowany to
     const isLoggedIn = false

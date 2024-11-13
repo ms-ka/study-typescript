@@ -7,19 +7,19 @@
     border: none;
 }
 
-.btn-primary{
+.btnPrimary{
     background-color: rgb(105, 188, 240);
 }
-.btn-danger{
+.btnDanger{
     background-color: red;
 }
 
 /* styl dla guzika jesli false */
-.btn-primary:hover{
+.btnPrimary:hover{
     background-color: rgb(165, 235, 105);
 }
 /* styl dla guzika jesli true */
-.btn-danger:hover{
+.btnDanger:hover{
     background-color: rgb(225, 235, 97);
 }
 
