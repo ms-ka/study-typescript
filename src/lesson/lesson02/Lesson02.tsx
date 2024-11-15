@@ -1,4 +1,4 @@
-import react from '../../assets/react.jpg';
+//import react from '../../assets/react.jpg';
 import MyButton from '../../components/myButton/MyButton';
 import './lesson02.css'
 function Lesson02(): JSX.Element {
@@ -31,7 +31,7 @@ function Lesson02(): JSX.Element {
         <h3>Lesson 02</h3>
         <p>React JSX components</p>
         {/* zdjęcie traktowana jest jako zmienna, aby je wyświetlić trzeba użyć {}*/}
-        <img className='react-img' src={react} alt= "opis zdjęcia"/>
+        {/* <img className='react-img' src={react} alt= "opis zdjęcia"/> */}
         <ul>
             <li>Simple text</li>
           {element}

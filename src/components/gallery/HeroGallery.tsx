@@ -1,6 +1,7 @@
 import React from "react";
 import HeroCard from "./HeroCard";
 import IHero from "../../lesson/lesson05/data";
+import './heroGallery.css'
 
 //Interfejs IHero - Definiuje strukturę dla każdego bohatera.
 interface HeroGalleryProps {
