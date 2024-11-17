@@ -15,7 +15,7 @@ export default function Lesson09() {
         <li>шаблонная строка</li>
         <li>библиотека classnames</li>
       </ul>
-      <p className={cn(styles.desc, styles.boldText)}>Библиотеку classnames мы устанавливаем через команду 'npm i classnames' и импортируем в нужный компонент</p>      <MyButton isDanger={false} text="css module кнопка"/>
+      <p className={cn(styles.desc, styles.boldText)}>Библиотеку classnames мы устанавливаем через команду 'npm i classnames' и импортируем в нужный компонент</p>     
       <MyButton isDanger={false} text="css module кнопка"/>
     </div>
   )

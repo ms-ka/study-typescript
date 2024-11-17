@@ -20,12 +20,15 @@
     /* napis po środku */
     justify-content: center;
     /* utawienie kolorow tylko dla div */
-    background-color: rgb(134, 169, 246);
-    color: rgb(3, 48, 88);
+    background-color: rgb(74, 112, 192);
+    color: orange;
     height: 100%;
     border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(11, 0, 0, 0.829); ;
 }
 
 .gridLessonContainer div:hover{
-    background-color: rgb(203, 226, 246);
+    background-color: rgba(237, 177, 86, 0.671);
+    color: rgb(74, 112, 192);
+
 }

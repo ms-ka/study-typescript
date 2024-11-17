@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MyButton from "../myButton/MyButton";
+import styles from "./fetchDog.module.css"
 
 // протипизировали данные с сервера
 interface IDogData {
@@ -32,16 +33,18 @@ export default function FetchDog(): JSX.Element {
   }, []);
 // Pusty array, więc kod uruchomi się tylko raz po załadowaniu komponentu.
 
-  return (
-    <div className="lesson-container">
-      {dogImg && (
-        <>
-          <h3>Fetch dog 🐶</h3>
-          <img height={200} src={dogImg} alt="" />
-          <MyButton func={fetchDog} text={'update dog'} />
-        </>
-      )}
+return (
+  <div className="lesson-container">
+    {dogImg && (
+      <>
+        <h3>Fetch dog 🐶</h3>
+        <div className={styles.imgWrapper}>
+          <img src={dogImg} alt="" />
+        </div>
+        <MyButton func={fetchDog} text={'update dog'} />
+      </>
+    )}
 
-    </div>
-  );
+  </div>
+);
 }
