@@ -41,7 +41,7 @@ li {
   margin-top: 20px;
 }
 
-.lesson-container > h2 {
+.lesson-container > h2,li {
   margin-bottom: 8px;
 }
 

@@ -1,0 +1,21 @@
+.formGender {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.formGender>input {
+  margin-bottom: 3px;
+}
+
+.formGender>button {
+  padding: 3px 0px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(106, 192, 143);
+}
+
+.formGender>button:hover {
+  background-color: rgb(241, 195, 241);
+}

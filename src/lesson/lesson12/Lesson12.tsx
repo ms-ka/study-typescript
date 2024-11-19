@@ -12,15 +12,18 @@ interface IFormValues{
 
 export default function Lesson12(){
 
+//dodaję Hook który zajmuje się nawigacją, do zmiennej przekazuję rezultat
 const navigate = useNavigate()  
 
-//1. uaktywniam funkcję Hook useFormik, w której będzie obiekt z jego ustawieniami, rezultat jest postawiony w miejsce zmiennej i dalej używany
+//1. uaktywniam funkcję Hook useFormik, w której tworzę obiekt 'formik' wewnątrz komponenta 'Lesson12' z jego ustawieniami, rezultat jest postawiony w miejsce zmiennej i dalej używany
 
 const formik = useFormik({
 //2. poniżej tworzę  obiekt z dwoma kluczami, którym przekazuję początkowe znaczenie initialValues i onSubmit
 //tutaj będą początkowe znaczenia w formularzu
 initialValues: {
+  //tutaj już wprowadziłam odpowiedz w formularzu
   firstName: 'your name',
+  //tu użytkownik wpisuje znaczenie w formularzu
   lastName: '',
   email: ''
 } as IFormValues, 
@@ -28,23 +31,24 @@ initialValues: {
 onSubmit:(values: IFormValues, {resetForm}) => {
 console.log(values);
 resetForm();
-//po wypełnieniu formularza przenosi na ustaloną w navigate stronę, tu stronę główną
-navigate('/')
-// navigate('../lesson01')
+//po wypełnieniu formularza przenosi na ustaloną w navigate stronę, trzeba wpisać jej ścieżkę
+//navigate('/')
+ navigate('../lesson-1')
 }
 });
 
+//podłączam obiekt aby go użyć
   return (
     <div className='lesson-container'>
         <h2>Formik</h2> 
         <p>Formik to biblioteka do pracy z formami w React.</p>
         {/* onSubmit={formik.handleSubmit}: Obsługuje wysyłanie formularza. */}
-      <form onSubmit={formik.handleSubmit} className={styles.form}>
+    <form onSubmit={formik.handleSubmit} className={styles.form}>
        {/* input to dane wprowadzane przez użytkownika */}
         <input onChange={formik.handleChange} value={formik.values.firstName} name='firstName' type='text' placeholder='first name'/>
         {/* onChange={formik.handleChange}: Rejestruje zmiany w polach i aktualizuje stan Formika. */}
         <input onChange={formik.handleChange} value={formik.values.lastName} name='lastName' type='text' placeholder='last name'/>
-        {/* sprawdzanie poprawności wartości */}
+        {/* value= sprawdzanie poprawności wartości */}
         <input onChange={formik.handleChange} value={formik.values.email} name='email' type='email' placeholder='e-Mail'/>
         <MyButton type='submit' text='send'/>
       </form>

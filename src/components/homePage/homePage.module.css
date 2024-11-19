@@ -26,9 +26,16 @@
     border-radius: 15px;
     box-shadow: 2px 2px 5px rgba(11, 0, 0, 0.829); ;
 }
+.homework{
+    background-color: rgba(231, 202, 158, 0.671) !important;
+}
 
 .gridLessonContainer div:hover{
     background-color: rgba(237, 177, 86, 0.671);
-    color: rgb(74, 112, 192);
+    color: rgb(74, 112, 192) ;
 
+}
+.homework:hover{
+    background-color: rgba(132, 159, 205, 0.671) !important;
+    color: rgb(83, 126, 212) !important;
 }

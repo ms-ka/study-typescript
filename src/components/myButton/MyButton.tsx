@@ -27,7 +27,7 @@ interface IMyButtonProps {
 }
 
 const handleDefaultClick = () => {
-  console.log("default click!");
+  //console.log("default click!");
 };
 
 //Jeśli funkcja kliknięcia (func) nie zostanie przekazana, domyślnie

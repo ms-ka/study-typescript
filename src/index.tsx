@@ -18,12 +18,17 @@ import HomePage from "./components/homePage/HomePage";
 import Lesson10 from "./lesson/lesson10/Lesson10";
 import Lesson09 from "./lesson/lesson09/Lesson09";
 import Lesson08 from "./lesson/lesson08/Lesson08";
+import Homework12 from "./components/homework/Homework12";
+import Lesson13 from "./lesson/lesson13/Lesson13";
+import Homework03 from "./components/homework/Homework03";
+import Homework04 from "./components/homework/Homework04";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   // importuję HashRouter z biblioteki
+  //props future został dodany aby nie przychodziły warningi w konsoli
   <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     {/* importuję komponent routes obok każdego komponentu */}
     <Routes>
@@ -36,6 +41,9 @@ root.render(
         {/* w browser trzeba wpisać /#/fetch-dog */}
         <Route path="fetch-dog" element={<FetchDog />} />
         {/*znajduje się w lekcji 5, trzeba dodać style z lekcji 5 do galerii  */}
+        <Route path='homework-3' element={<Homework03/>} />
+        <Route path='homework-4' element={<Homework04/>} />
+        <Route path='homework-12' element={<Homework12/>} />
         <Route path="hero-gallery" element={<HeroGallery data={heroes}/>} />
         <Route path='lesson-1'element={<Lesson01/>}/>
         <Route path='lesson-2'element={<Lesson02/>}/>
@@ -49,6 +57,7 @@ root.render(
         <Route path='lesson-10'element={<Lesson10/>}/>
         <Route path='lesson-11'element={<Lesson11/>}/>
         <Route path='lesson-12'element={<Lesson12/>}/>
+        <Route path='lesson-13'element={<Lesson13/>}/>
       </Route>
     </Routes>
   </HashRouter>
