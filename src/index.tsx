@@ -22,6 +22,10 @@ import Homework12 from "./components/homework/Homework12";
 import Lesson13 from "./lesson/lesson13/Lesson13";
 import Homework03 from "./components/homework/Homework03";
 import Homework04 from "./components/homework/Homework04";
+import Lesson14 from "./lesson/lesson14/Lesson14";
+import ProductPage from './productPage/ProductPage'
+import FormGender from "./components/formGender/FormGender";
+import CatFact from "./components/catFact/CatFact"
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -45,6 +49,9 @@ root.render(
         <Route path='homework-4' element={<Homework04/>} />
         <Route path='homework-12' element={<Homework12/>} />
         <Route path="hero-gallery" element={<HeroGallery data={heroes}/>} />
+        <Route path="gender-form" element={<FormGender/>} />
+        <Route path="cat-fact" element={<CatFact/>} />
+        <Route path="lesson-10" element={<Lesson10/>} />
         <Route path='lesson-1'element={<Lesson01/>}/>
         <Route path='lesson-2'element={<Lesson02/>}/>
         <Route path='lesson-3'element={<Lesson03/>}/>
@@ -58,6 +65,9 @@ root.render(
         <Route path='lesson-11'element={<Lesson11/>}/>
         <Route path='lesson-12'element={<Lesson12/>}/>
         <Route path='lesson-13'element={<Lesson13/>}/>
+        <Route path='lesson-14'element={<Lesson14/>}/>
+        {/* można wpisać drogę do produktu */}
+        <Route path='lesson-14/:id'element={<ProductPage/>}/>
       </Route>
     </Routes>
   </HashRouter>

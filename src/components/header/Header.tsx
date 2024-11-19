@@ -20,9 +20,14 @@ export default function Header() {
       className={({ isActive }) => (isActive ? styles.linkActive : "")}
       to={"hero-gallery"}>Hero gallery</NavLink>
     {/* tylko jeśli dany link jest aktywny, czyli isActive jest true to włączane są style z css */}
+    <NavLink
+      className={({ isActive }) => (isActive ? styles.linkActive : "")}
+      to={"gender-form"}>Gender form</NavLink>
+<NavLink
+      className={({ isActive }) => (isActive ? styles.linkActive : "")}
+      to={"cat-fact"}>CatFact</NavLink>
   </header>
-  );
-
+  )
 // Jeśli link pasuje do aktualnego adresu URL (jest aktywny), dodawana jest klasa linkActive, co pozwala wyróżnić aktywny link wizualnie (np. innym kolorem).
 // Jeśli link nie jest aktywny, klasa linkActive nie jest przypisywana.
 // Każdy link przekierowuje użytkownika do określonego adresu URL: /, /fetch-dog, lub /hero-gallery.
