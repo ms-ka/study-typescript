@@ -26,13 +26,18 @@ import Lesson14 from "./lesson/lesson14/Lesson14";
 import ProductPage from './components/productPage/ProductPage'
 import FormGender from "./components/formGender/FormGender";
 import CatFact from "./components/catFact/CatFact"
+import { CartProvider } from "./context/cartContext";
+import Cart from "./components/cart/Cart";
+import Products from "./components/products/Products";
+import NoPage from "./components/noPage/NoPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  // importuję HashRouter z biblioteki
-  //props future został dodany aby nie przychodziły warningi w konsoli
+  <CartProvider>
+  {/* // importuję HashRouter z biblioteki
+  //props future został dodany aby nie przychodziły warningi w konsoli */}
   <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     {/* importuję komponent routes obok każdego komponentu */}
     <Routes>
@@ -49,8 +54,11 @@ root.render(
         <Route path='homework-4' element={<Homework04/>} />
         <Route path='homework-12' element={<Homework12/>} />
         <Route path="hero-gallery" element={<HeroGallery data={heroes}/>} />
-        <Route path="gender-form" element={<FormGender/>} />
         <Route path="cat-fact" element={<CatFact/>} />
+        <Route path="gender-form" element={<FormGender/>} />
+        <Route path="products" element={<Products/>} />        
+        <Route path='products/:id'element={<ProductPage/>}/>
+        <Route path="cart" element={<Cart/>} />
         <Route path="lesson-10" element={<Lesson10/>} />
         <Route path='lesson-1'element={<Lesson01/>}/>
         <Route path='lesson-2'element={<Lesson02/>}/>
@@ -66,9 +74,10 @@ root.render(
         <Route path='lesson-12'element={<Lesson12/>}/>
         <Route path='lesson-13'element={<Lesson13/>}/>
         <Route path='lesson-14'element={<Lesson14/>}/>
+        <Route path="*" element={<NoPage/>} />
         {/* można wpisać drogę do produktu */}
-        <Route path='lesson-14/:id'element={<ProductPage/>}/>
       </Route>
     </Routes>
   </HashRouter>
+</CartProvider>
 );

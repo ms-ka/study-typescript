@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import styles from './products.module.css';
 import { IProduct } from "../../types/types";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/cartContext";
+import ShopProduct from "../shopProduct/ShopProduct";
 
 export default function Products() {
     //trzeba importować IProduct z types
     // w zmiennej products przechowywane są wszystkie produkty, które użyję potem w return
     const [products, setProducts] = useState<IProduct[]>([]);
+    //zwracam się do kontekstu koszyka
+    const {addToCart} = useCart();
 
   //asychroniczne zapytanie do serwera
   const getProducts = async () => {
@@ -32,16 +36,14 @@ export default function Products() {
         {/* map wywołuje zapytanie grupowe, dla całego massiv */}
         {products.map(product => (
           // każda karta będzie w sobie zawierała klucz z inf o produkcie
-            <div className={styles.shopContainerCard} key={product.id}>
-            <h5>{product.title}</h5>
-            <h6>🔥{product.price} €</h6>
-            <div className={styles.imgWrapper}>
-                <img src={product.image} alt=''/>
-            </div>
-            <Link to = {String(product.id)}> ➡️ To product ⬅️</Link>
-            </div>
-        ))}
-      </div>
+          <>
+          <div>
+            <ShopProduct key={product.id} price={product.price} id={product.id} title={product.title} image={product.image} />
+            <button onClick={()=> addToCart({id: product.id, title: product.title, price:product.price, quantity:1})}>add</button>
+          </div>
+        </>
+      ))}
     </div>
-  );
+  </div>
+);
 }

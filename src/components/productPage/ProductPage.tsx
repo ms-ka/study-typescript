@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { IProduct } from '../../types/types';
-import styles from './productPage.module.css'
 
 export default function ProductPage() {
     //params zabiera dane z okienka adresu strony
@@ -22,7 +21,7 @@ export default function ProductPage() {
 
 const getProduct = (id:string) => {
     fetch(`https://fakestoreapi.com/products/${id}`)
-    .then (res=> res.json())
+    .then (response=> response.json())
     .then (data => setProduct(data));
 }
 
@@ -33,11 +32,10 @@ getProduct(id as string);
 
   return (
     <div className='lesson-container'>
-        <p>ProductPage</p>
-        <p>{product.title}</p>
-        <h3>{product.description}</h3>
+        <h3>{product.title}</h3>
+        <p>{product.description}</p>
         <img width={250} src={product.image} alt=''/>
-        <Link to ='../lesson-14'>↩️ Back to products ↩️</Link>
+        <Link to ='../products'>↩️ Back to products ↩️</Link>
     </div>
   )
 }

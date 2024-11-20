@@ -23,9 +23,15 @@ export default function Header() {
     <NavLink
       className={({ isActive }) => (isActive ? styles.linkActive : "")}
       to={"gender-form"}>Gender form</NavLink>
-<NavLink
+    <NavLink
       className={({ isActive }) => (isActive ? styles.linkActive : "")}
       to={"cat-fact"}>CatFact</NavLink>
+    <NavLink
+      className={({ isActive }) => (isActive ? styles.linkActive : "")}
+      to={"products"}>Products</NavLink>  
+    <NavLink
+      className={({ isActive }) => (isActive ? styles.linkActive : "")}
+      to={"cart"}>Cart</NavLink>
   </header>
   )
 // Jeśli link pasuje do aktualnego adresu URL (jest aktywny), dodawana jest klasa linkActive, co pozwala wyróżnić aktywny link wizualnie (np. innym kolorem).
