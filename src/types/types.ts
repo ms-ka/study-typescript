@@ -1,3 +1,5 @@
+//tutaj przychodzą typy używane w całej aplikacji
+
 export interface IProduct {
     id: number
     title: string

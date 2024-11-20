@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { IProduct } from '../types/types'
+import { IProduct } from '../../types/types';
+import styles from './productPage.module.css'
 
 export default function ProductPage() {
     //params zabiera dane z okienka adresu strony
@@ -36,7 +37,7 @@ getProduct(id as string);
         <p>{product.title}</p>
         <h3>{product.description}</h3>
         <img width={250} src={product.image} alt=''/>
-        <Link to ='../lesson-14'>back to product </Link>
+        <Link to ='../lesson-14'>↩️ Back to products ↩️</Link>
     </div>
   )
 }

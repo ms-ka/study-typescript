@@ -23,7 +23,7 @@ import Lesson13 from "./lesson/lesson13/Lesson13";
 import Homework03 from "./components/homework/Homework03";
 import Homework04 from "./components/homework/Homework04";
 import Lesson14 from "./lesson/lesson14/Lesson14";
-import ProductPage from './productPage/ProductPage'
+import ProductPage from './components/productPage/ProductPage'
 import FormGender from "./components/formGender/FormGender";
 import CatFact from "./components/catFact/CatFact"
 

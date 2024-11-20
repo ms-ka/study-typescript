@@ -47,7 +47,7 @@ fetchFox()
 
   return (
     <div className='lesson=container'>
-        <h3>Fetch Fox</h3>
+        <h3>Fetch Fox 🦊</h3>
               {/* 6. добавили в верстку картинку и кнопу с обработчиком onClick для функции */}
         <MyButton text = 'get fox!' func={handleGetFox}/>
               {/* если в loading true мы покажем Loader, если false - показываем данные */}

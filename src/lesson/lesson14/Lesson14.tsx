@@ -1,5 +1,4 @@
-import React from 'react'
-import Products from "../../components/products/Products";
+import Products from '../../components/products/Products'
 
 export default function Lesson14() {
   return (

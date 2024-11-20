@@ -46,8 +46,8 @@ export default function CatFact(): JSX.Element {
   };
 
   return (
-    <div className={styles.atContainer}>
-      <h3>Cat Fact</h3>
+    <div className={styles.catContainer}>
+      <h3>Cat Fact 🐱</h3>
       {/* 6. добавили в верстку картинку и кнопу с обработчиком onClick для функции */}
       <MyButton text="Get more info" func={handleGetCat} />
       {/* если в loading true мы покажем Loader, если false -  */}
